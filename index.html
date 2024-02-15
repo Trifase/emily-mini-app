@@ -8,6 +8,7 @@
     <title>python-telegram-bot Example WebApp</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/easy-toggle-state/1.16.0/easy-toggle-state.min.js" integrity="sha512-hG7MyW8uOh26+C0KutsTVCJm8waH4iA9vSa8gOsosTHdIh6JjOE/MRn8vmcFg2rLGTnpVWmSKcDJF48cB89/3w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <script type="text/javascript">
     console.log(window.Telegram.WebApp.initData);
@@ -39,13 +40,33 @@
     <script type="text/javascript">
     document.write(window.location.search)
 </script>
+<!--
+The data-toggle-class attribute tells this button
+to toggle the class `is-pressed` on itself on click.
+As `aria-pressed` attribute is set, its value changes too.
+-->
+<button
+	type="button"
+	class="example-switchbox"
+	data-toggle-class="is-pressed"
+	id="switchbox_V2VVB"
+	aria-pressed="false"
+	title="Toggle this box">
 
-    
-<div style="position: absolute; margin-top: 5vh; margin-left: 5vw; height: 90vh; width: 90vw; border-radius: 5vh; background-color: var(--tg-theme-bg-color); box-shadow: 0 0 2vw
- #000000;">
-    <div id="picker"
-         style="display: flex; justify-content: center; align-items: center; height: 100%; width: 100%"></div>
-</div>
+	<!--
+	The words 'yes' and 'no' are here to add more sense and to make
+	this component more accessible by not rendering each state with only colors.
+	-->
+	<span class="example-switchbox-yes">SÌ</span>
+	<span class="example-switchbox-no">NO</span>
+
+	<!-- The class `sr-only` is for hiding content for accessibility -->
+	<span class="sr-only">Toggle</span>
+
+</button>
+
+<!-- The label is associated to the trigger by the for attribute. -->
+<label for="switchbox_V2VVB">Vuoi vedere solo i preferiti?</label>
 </body>
 <script type="text/javascript">
     Telegram.WebApp.expand();
