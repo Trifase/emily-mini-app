@@ -15,7 +15,15 @@
 <script type="text/javascript">
 	// Da qua prendiamo i query params e facciamo un oggetto
 	var myobj = Object.fromEntries(new URLSearchParams(location.search));
+	for (const [key, value] of Object.entries(myobj)) {
+		if (value === 'true') {
+			myobj[key] = true
+		}
+		else if (value === 'false') {
+			myobj[key] = false
 
+		}
+	}
 	console.log(JSON.stringify(myobj));
 
 	// TG Stuff
