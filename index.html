@@ -14,10 +14,7 @@
    </head>
 <script type="text/javascript">
 	// Da qua prendiamo i query params e facciamo un oggetto
-	const params = new Proxy(new URLSearchParams(window.location.search), {
-  		get: (searchParams, prop) => searchParams.get(prop),
-	});
-	let myobj = JSON.parse(JSON.stringify(params));
+	var myobj = Object.fromEntries(new URLSearchParams(location.search));
 
 	console.log(JSON.stringify(myobj));
 
