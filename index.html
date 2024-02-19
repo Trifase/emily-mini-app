@@ -4,32 +4,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <title>python-telegram-bot Example WebApp</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/easy-toggle-state/1.16.0/easy-toggle-state.min.js" integrity="sha512-hG7MyW8uOh26+C0KutsTVCJm8waH4iA9vSa8gOsosTHdIh6JjOE/MRn8vmcFg2rLGTnpVWmSKcDJF48cB89/3w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-</head>
-<script type="text/javascript">
-    console.log(window.Telegram.WebApp.initData);
-    console.log(window.Telegram.WebApp.initDataUnsafe);
-    const colorPicker = new iro.ColorPicker('#picker', {
-        borderColor: "#ffffff",
-        borderWidth: 1,
-        width: Math.round(document.documentElement.clientWidth / 2),
-    });
-    colorPicker.on('color:change', function (color) {
-        document.body.style.background = color.hexString;
-    });
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
+   </head>
+<script type="text/javascript">
+    // console.log(window.Telegram.WebApp.initData);
+    // console.log(window.Telegram.WebApp.initDataUnsafe);
+	let myobj = {key1: false, key2:true} 
     Telegram.WebApp.ready();
-    Telegram.WebApp.MainButton.setText('Choose Color').show().onClick(function () {
-        const data = JSON.stringify({hex: colorPicker.color.hexString, rgb: colorPicker.color.rgb});
+    Telegram.WebApp.MainButton.setText('OK').show().onClick(function () {
+        const data = JSON.stringify(myobj);
+		console.log(data);
         Telegram.WebApp.sendData(data);
         Telegram.WebApp.close();
     });
 </script>
 <body style="background-color: #ffffff">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+ 
 <script type="text/javascript">
     document.write(JSON.stringify(window.Telegram.WebApp.initData))
 </script>
@@ -37,36 +34,15 @@
     document.write(JSON.stringify(window.Telegram.WebApp.initDataUnsafe))
 </script>
     </script>
-    <script type="text/javascript">
+<script type="text/javascript">
     document.write(window.location.search)
 </script>
-<!--
-The data-toggle-class attribute tells this button
-to toggle the class `is-pressed` on itself on click.
-As `aria-pressed` attribute is set, its value changes too.
--->
-<button
-	type="button"
-	class="example-switchbox"
-	data-toggle-class="is-pressed"
-	id="switchbox_V2VVB"
-	aria-pressed="false"
-	title="Toggle this box">
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+  <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label>
+</div>
 
-	<!--
-	The words 'yes' and 'no' are here to add more sense and to make
-	this component more accessible by not rendering each state with only colors.
-	-->
-	<span class="example-switchbox-yes">SÌ</span>
-	<span class="example-switchbox-no">NO</span>
 
-	<!-- The class `sr-only` is for hiding content for accessibility -->
-	<span class="sr-only">Toggle</span>
-
-</button>
-
-<!-- The label is associated to the trigger by the for attribute. -->
-<label for="switchbox_V2VVB">Vuoi vedere solo i preferiti?</label>
 </body>
 <script type="text/javascript">
     Telegram.WebApp.expand();
