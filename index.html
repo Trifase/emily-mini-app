@@ -14,7 +14,11 @@
    </head>
 <script type="text/javascript">
 	// Da qua prendiamo i query params e facciamo un oggetto
-	let myobj = new URLSearchParams(window.location.search);
+	const params = new Proxy(new URLSearchParams(window.location.search), {
+  		get: (searchParams, prop) => searchParams.get(prop),
+	});
+	let myobj = JSON.parse(JSON.stringify(params));
+
 	console.log(JSON.stringify(myobj));
 
 	// TG Stuff
